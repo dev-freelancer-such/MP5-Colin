@@ -1,0 +1,262 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.chart-card {
+  background: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  transition: all $transition-medium $transition-ease;
+  box-shadow: $shadow-sm;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+
+  &:hover {
+    box-shadow: $shadow-md;
+    border-color: rgba(24, 138, 226, 0.15);
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--spacing-4);
+    padding-bottom: var(--spacing-3);
+    border-bottom: 1px solid var(--color-border);
+    min-height: 60px;
+  }
+
+  &__info-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-10);
+    justify-content: center;
+
+    p {
+      text-align: center;
+      color: var(--color-primary-100);
+    }
+
+    h5 {
+      text-align: center;
+    }
+  }
+
+  &__totals-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-3);
+
+    .payments-methods {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-2);
+
+      .ant-image {
+        width: 38px;
+
+        img {
+          height: 24px;
+          width: auto;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  &__title-section {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    flex-shrink: 0;
+  }
+
+  &__menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all $transition-base $transition-ease;
+
+    &:hover {
+      background: var(--color-bg-gray-50);
+      color: var(--color-primary);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    .anticon {
+      font-size: 18px;
+    }
+  }
+
+  &__body {
+    flex: 1;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    // Custom scrollbar
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--color-bg-gray-50);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-primary-200);
+      border-radius: 3px;
+
+      &:hover {
+        background: var(--color-primary-300);
+      }
+    }
+  }
+
+  &__chart {
+    width: 100%;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+
+    // Đảm bảo chart không bị cắt trên mobile
+    > div {
+      min-width: 100%;
+    }
+  }
+
+  &__loading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-8) 0;
+
+    .ant-skeleton-element {
+      width: 100%;
+    }
+  }
+
+  &__footer {
+    padding-top: var(--spacing-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+  // Loading state
+  &--loading {
+    pointer-events: none;
+
+    &:hover {
+      box-shadow: $shadow-sm;
+      border-color: var(--color-border);
+    }
+  }
+
+  // Responsive
+  @media (max-width: $breakpoint-lg) {
+    padding: var(--spacing-5);
+
+    &__body {
+      min-height: 250px;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: var(--spacing-4);
+
+    &__title {
+      font-size: 16px;
+    }
+
+    &__body {
+      min-height: 200px;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: var(--spacing-3);
+    gap: var(--spacing-3);
+
+    &__header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing-2);
+    }
+
+    &__actions {
+      width: 100%;
+      justify-content: flex-end;
+    }
+
+    &__body {
+      min-height: 180px;
+    }
+
+    &__info-container {
+      flex-direction: column;
+      gap: var(--spacing-4);
+      align-items: flex-start;
+    }
+
+    &__totals-section {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing-3);
+    }
+  }
+
+  // Xử lý scroll ngang cho màn hình rất nhỏ
+  @media (max-width: 500px) {
+    padding: var(--spacing-2);
+
+    &__header {
+      min-height: auto;
+      padding-bottom: var(--spacing-2);
+    }
+
+    &__body {
+      min-height: 250px;
+      position: relative;
+      width: 100%;
+    }
+
+    &__chart {
+      // Cho phép chart có scroll ngang trên mobile
+      min-width: 100%;
+
+      // Wrapper bên trong chart sẽ xử lý scroll
+      > div {
+        min-width: 450px; // Minimum width cho charts để dễ đọc
+      }
+    }
+
+    &__info-container {
+      gap: var(--spacing-3);
+    }
+  }
+}

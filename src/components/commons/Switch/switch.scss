@@ -1,0 +1,121 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.common-switch {
+  // Custom styles for switch component
+  &.ant-switch {
+    min-width: 46px;
+    height: 22px;
+    background-color: $color-gray-400;
+    border-radius: $border-radius-full;
+    @include transition(all, $transition-base, $transition-ease);
+
+    &:hover:not(.ant-switch-disabled) {
+      background-color: $color-gray-500;
+    }
+
+    &.ant-switch-checked {
+      background-color: $color-success;
+
+      &:hover:not(.ant-switch-disabled) {
+        background-color: $color-success-hover;
+      }
+    }
+
+    &.ant-switch-loading {
+      opacity: 0.6;
+    }
+
+    // Handle styling
+    .ant-switch-handle {
+      width: 18px;
+      height: 18px;
+      top: 2px;
+      inset-inline-start: 2px;
+      @include transition(all, $transition-base, $transition-ease);
+
+      &::before {
+        border-radius: 50%;
+      }
+    }
+
+    &.ant-switch-checked .ant-switch-handle {
+      inset-inline-start: calc(100% - 20px);
+    }
+
+    // Inner text styling
+    .ant-switch-inner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-inline-start: 0;
+      padding-inline-end: 6px;
+      font-size: 10px;
+      font-weight: $font-weight-semibold;
+      color: $color-white;
+      transition: all $transition-base $transition-ease;
+      white-space: nowrap;
+    }
+
+    &.ant-switch-checked .ant-switch-inner {
+      justify-content: flex-start;
+      padding-inline-start: 6px;
+      padding-inline-end: 0;
+    }
+  }
+
+  // Small size adjustments
+  &.ant-switch-small {
+    min-width: 40px;
+    height: 18px;
+    line-height: 18px;
+
+    .ant-switch-handle {
+      width: 14px;
+      height: 14px;
+      top: 2px;
+      inset-inline-start: 2px;
+    }
+
+    &.ant-switch-checked .ant-switch-handle {
+      inset-inline-start: calc(100% - 16px);
+    }
+
+    .ant-switch-inner {
+      padding-inline-end: 5px;
+      font-size: 9px;
+    }
+
+    &.ant-switch-checked .ant-switch-inner {
+      padding-inline-start: 5px;
+      padding-inline-end: 0;
+    }
+  }
+
+  // Disabled state
+  &.ant-switch-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Dark mode styles
+.dark {
+  .common-switch {
+    &.ant-switch {
+      background-color: $color-gray-600;
+
+      &:hover:not(.ant-switch-disabled) {
+        background-color: $color-gray-700;
+      }
+
+      &.ant-switch-checked {
+        background-color: $color-success-light;
+
+        &:hover:not(.ant-switch-disabled) {
+          background-color: $color-success;
+        }
+      }
+    }
+  }
+}

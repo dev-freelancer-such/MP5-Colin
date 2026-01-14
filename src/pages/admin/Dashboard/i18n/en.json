@@ -1,0 +1,53 @@
+{
+  "header": "Dashboard",
+  "breadcrumb": {
+    "home": "Home",
+    "dashboard": "Dashboard"
+  },
+  "filters": {
+    "all": "All",
+    "1m": "1M",
+    "6m": "6M",
+    "1y": "1Y",
+    "refresh": "Refresh"
+  },
+  "adCampaigns": {
+    "title": "Ad Campaigns",
+    "activeCampaigns": "Active campaigns out of",
+    "showingResults": "Showing {{start}} of {{total}} Results"
+  },
+  "marketingTeam": {
+    "title": "Marketing Team",
+    "activeMembers": "Active members out of",
+    "import": "Import",
+    "export": "Export",
+    "showingResults": "Showing {{start}} of {{total}} Results"
+  },
+  "totalCards": {
+    "totalEarning": "Total Earning",
+    "numberOfVisit": "Number of Visit",
+    "totalOrder": "Total Order",
+    "totalReturn": "Total Return",
+    "sinceLastMonth": "Since last month"
+  },
+  "charts": {
+    "dailySales": "Daily Sales",
+    "statistics": "Statistics",
+    "totalRevenue": "Total Revenue",
+    "dataUses": "Data Uses",
+    "monthlyClimate": "Monthly Climate Analysis",
+    "totalSales": "Total Sales",
+    "openCampaign": "Open Campaign",
+    "marketingCost": "Marketing Cost"
+  },
+  "table": {
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "status": "Status",
+    "platform": "Platform",
+    "launched": "Launched",
+    "impressions": "Impressions",
+    "clicks": "Clicks"
+  }
+}

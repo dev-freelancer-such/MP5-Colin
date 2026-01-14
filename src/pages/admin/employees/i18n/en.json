@@ -1,0 +1,18 @@
+{
+  "avatar": "Avatar",
+  "company": "Company",
+  "department": "Department",
+  "team": "Team",
+  "status": "Status",
+  "position": "Position",
+  "status-working": "Status working",
+
+  "working": "Working",
+  "probation": "Probation",
+  "resigned": "Resigned",
+  "terminated": "Terminated",
+  "on_leave": "On leave",
+  "start_date": "Start date",
+  "end_date": "End date",
+  "action": "Action"
+}

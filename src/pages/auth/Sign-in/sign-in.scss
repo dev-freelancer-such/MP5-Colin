@@ -1,0 +1,74 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.sign-in-page {
+  width: 100%;
+  height: 100%;
+  @include flex-column;
+  justify-content: center;
+
+  &__header {
+    margin-bottom: $spacing-8;
+
+    &-title {
+      color: white;
+    }
+  }
+
+  &__form {
+    &-label {
+      color: white;
+      font-weight: $font-weight-medium;
+    }
+
+    &-icon {
+      color: $color-gray-400;
+    }
+
+    &-input {
+      border-radius: $border-radius-lg;
+    }
+  }
+
+  &__remember-section {
+    @include flex-between;
+
+    &-checkbox {
+      color: white;
+
+      .ant-checkbox + span {
+        color: $color-gray-300;
+      }
+    }
+
+    &-forgot-link {
+      color: $color-bg-blue-50;
+      @include transition(color);
+      cursor: pointer;
+
+      &:hover {
+        color: $color-primary-300;
+      }
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: $spacing-4;
+
+    &-text {
+      color: $color-gray-300;
+    }
+
+    &-link {
+      color: $color-bg-blue-50;
+      font-weight: $font-weight-semibold;
+      @include transition(color);
+      cursor: pointer;
+
+      &:hover {
+        color: #40a9ff;
+      }
+    }
+  }
+}

@@ -1,0 +1,221 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+// Ant Design Notification overrides
+.ant-notification {
+  z-index: $z-index-tooltip !important;
+  max-width: 500px;
+  width: auto;
+  position: fixed !important;
+  right: 400px !important;
+
+  .ant-notification-notice {
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-xl;
+    padding: $spacing-4;
+    background-color: $bg-light !important;
+    animation: notificationSlideIn 0.3s ease-out forwards;
+    @include transition(all, $transition-base);
+    position: relative;
+    overflow: visible;
+    max-width: 400px;
+    min-width: 300px;
+    width: auto;
+    transform: translateX(0) !important;
+
+    // Remove all possible default backgrounds
+    &::before,
+    &::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    // Remove background from content wrapper
+    .ant-notification-notice-content {
+      background: transparent !important;
+    }
+
+    // Remove background from with-icon wrapper
+    .ant-notification-notice-with-icon {
+      background: transparent !important;
+    }
+
+    &:hover {
+      box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.12);
+    }
+
+    .ant-notification-notice-message {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-1;
+      color: $color-gray-900;
+      background: transparent !important;
+      word-wrap: break-word;
+      white-space: normal;
+      overflow-wrap: break-word;
+    }
+
+    .ant-notification-notice-description {
+      font-size: $font-size-sm;
+      color: $color-gray-600;
+      line-height: 1.5;
+      background: transparent !important;
+      word-wrap: break-word;
+      white-space: normal;
+      overflow-wrap: break-word;
+      max-width: 100%;
+    }
+
+    .ant-notification-notice-icon {
+      font-size: 24px;
+      margin-right: $spacing-3;
+    }
+
+    .ant-notification-notice-close {
+      top: $spacing-4;
+      right: $spacing-4;
+      color: $color-gray-500;
+      @include transition(color, $transition-fast);
+
+      &:hover {
+        color: $color-gray-700;
+      }
+    }
+
+    .ant-notification-notice-close-x {
+      @include flex-center;
+    }
+
+    // Success
+    &.ant-notification-notice-success {
+      border-left: 4px solid $color-success;
+      background-color: $bg-light !important;
+
+      .ant-notification-notice-icon {
+        color: $color-success;
+      }
+
+      .ant-notification-notice-message,
+      .ant-notification-notice-description {
+        background: transparent !important;
+      }
+
+      // Remove Ant Design default success background
+      &::before {
+        display: none !important;
+      }
+    }
+
+    // Error
+    &.ant-notification-notice-error {
+      border-left: 4px solid $color-error;
+      background-color: $bg-light !important;
+
+      .ant-notification-notice-icon {
+        color: $color-error;
+      }
+
+      .ant-notification-notice-message,
+      .ant-notification-notice-description {
+        background: transparent !important;
+      }
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    // Warning
+    &.ant-notification-notice-warning {
+      border-left: 4px solid $color-warning;
+      background-color: $bg-light !important;
+
+      .ant-notification-notice-icon {
+        color: $color-warning;
+      }
+
+      .ant-notification-notice-message,
+      .ant-notification-notice-description {
+        background: transparent !important;
+      }
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    // Info
+    &.ant-notification-notice-info {
+      border-left: 4px solid $color-info;
+      background-color: $bg-light !important;
+
+      .ant-notification-notice-icon {
+        color: $color-info;
+      }
+
+      .ant-notification-notice-message,
+      .ant-notification-notice-description {
+        background: transparent !important;
+      }
+
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+}
+
+// Dark mode
+.dark {
+  .ant-notification {
+    .ant-notification-notice {
+      background-color: $bg-dark-secondary !important;
+      border-color: var(--color-border-light);
+
+      .ant-notification-notice-message {
+        color: $text-dark-primary;
+        background: transparent !important;
+      }
+
+      .ant-notification-notice-description {
+        color: $text-dark-secondary;
+        background: transparent !important;
+      }
+
+      .ant-notification-notice-close {
+        color: $color-gray-400;
+
+        &:hover {
+          color: $color-gray-200;
+        }
+      }
+
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+}
+
+// Animation
+@keyframes notificationSlideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes notificationSlideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}

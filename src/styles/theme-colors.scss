@@ -1,0 +1,154 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:root {
+  @include theme-light;
+  --color-primary: #{$color-primary};
+  --color-primary-50: #{$color-primary-50};
+  --color-primary-100: #{$color-primary-100};
+  --color-primary-200: #{$color-primary-200};
+  --color-primary-300: #{$color-primary-300};
+  --color-primary-400: #{$color-primary-400};
+  --color-primary-500: #{$color-primary-500};
+
+  --color-white: #{$color-white};
+
+  --color-text-light-primary: #{$text-light-primary};
+
+  --color-primary-600: #{$color-primary-600};
+  --color-primary-700: #{$color-primary-700};
+  --color-primary-800: #{$color-primary-800};
+  --color-primary-900: #{$color-primary-900};
+  --color-primary-950: #{$color-primary-950};
+  --color-text-white: #945d5d;
+
+  // Button
+  --color-success: #{$color-success};
+  --color-success-hover: #{$color-success-hover};
+  --color-success-active: #{$color-success-active};
+  --color-success-light: #{$color-success-light};
+
+  --color-warning: #{$color-warning};
+  --color-warning-hover: #{$color-warning-hover};
+  --color-warning-active: #{$color-warning-active};
+  --color-warning-light: #{$color-warning-light};
+
+  --color-error: #{$color-error};
+  --color-error-hover: #{$color-error-hover};
+  --color-error-active: #{$color-error-active};
+  --color-error-light: #{$color-error-light};
+
+  --color-info: #{$color-info};
+  --color-info-hover: #{$color-info-hover};
+  --color-info-active: #{$color-info-active};
+  --color-info-light: #{$color-info-light};
+
+  // Border
+  --color-border-light: #{$border-light};
+
+  // Background
+  --color-bg-primary: #{$color-bg-primary};
+  --color-bg-primary-50: #{$color-bg-primary-50};
+  --color-bg-white: #{$color-bg-white};
+  --color-bg-blue: #{$color-bg-blue};
+  --color-bg-blue-50: #{$color-bg-blue-50};
+  --color-bg-blue-100: #{$color-bg-blue-50};
+  --color-bg-blue-200: #{$color-bg-blue-200};
+
+  --color-bg-btn-primary: #{$color-bg-blue-50};
+
+  // Font sizes
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+  --font-size-4xl: #{$font-size-4xl};
+
+  // Font weights
+  --font-weight-thin: #{$font-weight-thin};
+  --font-weight-light: #{$font-weight-light};
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+  --font-weight-extrabold: #{$font-weight-extrabold};
+  --font-weight-black: #{$font-weight-black};
+
+  // Border radius
+  --radius-xs: #{$border-radius-xs};
+  --radius-sm: #{$border-radius-sm};
+  --radius-md: #{$border-radius-md};
+  --radius-lg: #{$border-radius-lg};
+  --radius-xl: #{$border-radius-xl};
+  --radius-full: #{$border-radius-full};
+
+  // Spacing
+  --spacing-1: #{$spacing-1};
+  --spacing-2: #{$spacing-2};
+  --spacing-3: #{$spacing-3};
+  --spacing-4: #{$spacing-4};
+  --spacing-5: #{$spacing-5};
+  --spacing-6: #{$spacing-6};
+  --spacing-8: #{$spacing-8};
+  --spacing-10: #{$spacing-10};
+  --spacing-12: #{$spacing-12};
+  --spacing-16: #{$spacing-16};
+
+  // Line heights
+  --line-height-xs: #{$line-height-xs};
+  --line-height-sm: #{$line-height-sm};
+  --line-height-base: #{$line-height-base};
+  --line-height-lg: #{$line-height-lg};
+  --line-height-xl: #{$line-height-xl};
+
+  // Breakpoints
+  --breakpoint-xs: #{$breakpoint-xs};
+  --breakpoint-sm: #{$breakpoint-sm};
+  --breakpoint-md: #{$breakpoint-md};
+  --breakpoint-lg: #{$breakpoint-lg};
+  --breakpoint-xl: #{$breakpoint-xl};
+  --breakpoint-2xl: #{$breakpoint-2xl};
+  --breakpoint-3xl: #{$breakpoint-3xl};
+
+  font-family: $font-family-base !important;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  font-family: $font-family-base !important;
+}
+
+.dark,
+[data-theme='dark'] {
+  @include theme-dark;
+
+  --color-white: #{$color-white};
+  --color-dark-white: #{$color-dark-white};
+
+  --color-primary: #{$color-dark-primary};
+  --color-primary-100: #{$color-dark-primary-100};
+
+  --color-primary-400: #{$color-dark-primary-400};
+  --color-primary-500: #{$color-dark-primary-500};
+
+  // Border
+  --color-border-dark-light: #{var(--color-border-light)-light};
+
+  // Background
+  --color-bg-btn-primary: #{$color-bg-blue-50};
+
+  --color-bg-primary: #{$color-bg-dark-primary};
+  --color-bg-primary-50: #{$color-bg-dark-primary-50};
+  --color-bg-white: #{$color-bg-dark-white};
+  --color-bg-blue: #{$color-bg-dark-blue};
+  --color-bg-blue-50: #{$color-bg-dark-blue-50};
+  --color-bg-blue-100: #{$color-bg-dark-blue-100};
+  --color-bg-blue-200: #{$color-bg-dark-blue-200};
+}

@@ -1,0 +1,53 @@
+{
+  "header": "Bảng điều khiển",
+  "breadcrumb": {
+    "home": "Trang chủ",
+    "dashboard": "Bảng điều khiển"
+  },
+  "filters": {
+    "all": "Tất cả",
+    "1m": "1 tháng",
+    "6m": "6 tháng",
+    "1y": "1 năm",
+    "refresh": "Làm mới"
+  },
+  "adCampaigns": {
+    "title": "Chiến dịch quảng cáo",
+    "activeCampaigns": "Chiến dịch đang hoạt động trong tổng số",
+    "showingResults": "Hiển thị {{start}} trong tổng số {{total}} kết quả"
+  },
+  "marketingTeam": {
+    "title": "Đội ngũ Marketing",
+    "activeMembers": "Thành viên đang hoạt động trong tổng số",
+    "import": "Nhập",
+    "export": "Xuất",
+    "showingResults": "Hiển thị {{start}} trong tổng số {{total}} kết quả"
+  },
+  "totalCards": {
+    "totalEarning": "Tổng thu nhập",
+    "numberOfVisit": "Số lượt truy cập",
+    "totalOrder": "Tổng đơn hàng",
+    "totalReturn": "Tổng hoàn trả",
+    "sinceLastMonth": "Kể từ tháng trước"
+  },
+  "charts": {
+    "dailySales": "Doanh số hàng ngày",
+    "statistics": "Thống kê",
+    "totalRevenue": "Tổng doanh thu",
+    "dataUses": "Sử dụng dữ liệu",
+    "monthlyClimate": "Phân tích khí hậu hàng tháng",
+    "totalSales": "Tổng bán hàng",
+    "openCampaign": "Chiến dịch mở",
+    "marketingCost": "Chi phí Marketing"
+  },
+  "table": {
+    "name": "Tên",
+    "email": "Email",
+    "role": "Vai trò",
+    "status": "Trạng thái",
+    "platform": "Nền tảng",
+    "launched": "Ngày phát hành",
+    "impressions": "Lượt hiển thị",
+    "clicks": "Lượt nhấp"
+  }
+}

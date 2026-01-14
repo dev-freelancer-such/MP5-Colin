@@ -1,0 +1,91 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.common-breadcrumb {
+  padding: $spacing-2 0;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: $spacing-2;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+
+    &--active {
+      .common-breadcrumb__text {
+        color: var(--text-primary);
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: $spacing-1;
+    text-decoration: none;
+    @include transition(all, $transition-base);
+
+    &:hover {
+      .common-breadcrumb__text {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__current {
+    display: flex;
+    align-items: center;
+    gap: $spacing-1;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-base;
+    color: var(--text-secondary);
+  }
+
+  &__text {
+    font-size: $font-size-sm;
+    color: var(--text-secondary);
+    @include transition(color, $transition-base);
+  }
+
+  &__separator {
+    display: flex;
+    align-items: center;
+    font-size: $font-size-sm;
+    color: var(--text-disabled);
+    user-select: none;
+  }
+}
+
+// Dark mode
+.dark {
+  .common-breadcrumb {
+    &__link {
+      &:hover {
+        .common-breadcrumb__text {
+          color: var(--color-primary);
+        }
+      }
+    }
+
+    &__icon {
+      color: var(--text-secondary);
+    }
+
+    &__separator {
+      color: var(--text-disabled);
+    }
+  }
+}

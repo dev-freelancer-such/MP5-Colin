@@ -1,0 +1,113 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.auth-layout {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow', sans-serif;
+  padding: 80px;
+
+  @media (max-width: $breakpoint-3xl) {
+    padding: 80px;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    padding: 40px;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: 24px;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    padding: 12px;
+  }
+
+  &__language-switcher {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 20;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    width: 55vw;
+    height: 55vh;
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: $breakpoint-3xl) {
+      width: 60vw;
+    }
+
+    @media (max-width: $breakpoint-2xl) {
+      width: 90vw;
+      height: 70vh;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      height: fit-content;
+    }
+  }
+
+  &__left-panel {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: $spacing-4;
+    width: 50%;
+    height: 100%;
+    backdrop-filter: blur(12px);
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 40px;
+
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+    }
+  }
+
+  &__panel-title {
+    color: var(--color-white);
+    text-align: left;
+  }
+
+  &__panel-description {
+    color: var(--color-white);
+    opacity: 0.9;
+    text-align: left;
+    line-height: 1.6;
+  }
+
+  &__right-panel {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    width: 100%;
+    color: var(--color-white);
+    padding: 40px;
+
+    @media (min-width: $breakpoint-lg) {
+      width: 50%;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      padding: 24px;
+    }
+
+    @media (max-width: $breakpoint-xs) {
+      padding: 12px;
+    }
+  }
+}

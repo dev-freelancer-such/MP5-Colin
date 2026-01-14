@@ -1,0 +1,259 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.typography {
+  font-family: $font-family-base;
+  font-size: var(--font-size-xs);
+  font-weight: $font-weight-regular;
+  line-height: 1.5;
+  color: var(--color-primary);
+
+  // Variants
+  &.typography-h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: $font-weight-bold;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: var(--font-size-5xl);
+    }
+  }
+
+  &.typography-h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: $font-weight-bold;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: var(--font-size-4xl);
+    }
+  }
+
+  &.typography-h3 {
+    font-size: var(--font-size-3xl);
+    font-weight: $font-weight-semibold;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: var(--font-size-4xl);
+    }
+  }
+
+  &.typography-h4 {
+    font-size: var(--font-size-2xl);
+    font-weight: $font-weight-semibold;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: var(--font-size-3xl);
+    }
+  }
+
+  &.typography-h5 {
+    font-size: var(--font-size-xl);
+    font-weight: $font-weight-semibold;
+    line-height: 1.5;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: var(--font-size-2xl);
+    }
+  }
+
+  &.typography-h6 {
+    font-size: var(--font-size-lg);
+    font-weight: $font-weight-semibold;
+    line-height: 1.5;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: var(--font-size-xl);
+    }
+  }
+
+  &.typography-body1 {
+    font-size: var(--font-size-base);
+    font-weight: $font-weight-regular;
+    line-height: 1.6;
+  }
+
+  &.typography-body2 {
+    font-size: var(--font-size-sm);
+    font-weight: $font-weight-regular;
+    line-height: 1.6;
+  }
+
+  &.typography-subtitle1 {
+    font-size: var(--font-size-lg);
+    font-weight: $font-weight-medium;
+    line-height: 1.5;
+  }
+
+  &.typography-subtitle2 {
+    font-size: var(--font-size-base);
+    font-weight: $font-weight-medium;
+    line-height: 1.5;
+  }
+
+  &.typography-caption {
+    font-size: var(--font-size-xs);
+    font-weight: $font-weight-regular;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+  }
+
+  &.typography-overline {
+    font-size: var(--font-size-xs);
+    font-weight: $font-weight-medium;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  // Font Weights
+  &.typography-font-thin {
+    font-weight: $font-weight-thin;
+  }
+
+  &.typography-font-light {
+    font-weight: $font-weight-light;
+  }
+
+  &.typography-font-normal {
+    font-weight: $font-weight-regular;
+  }
+
+  &.typography-font-medium {
+    font-weight: $font-weight-medium;
+  }
+
+  &.typography-font-semibold {
+    font-weight: $font-weight-semibold;
+  }
+
+  &.typography-font-bold {
+    font-weight: $font-weight-bold;
+  }
+
+  &.typography-font-extrabold {
+    font-weight: $font-weight-extrabold;
+  }
+
+  // Colors
+  &.typography-color-primary {
+    color: var(--color-primary);
+  }
+
+  &.typography-color-secondary {
+    color: $color-gray-600;
+  }
+
+  &.typography-color-success {
+    color: $color-success !important;
+  }
+
+  &.typography-color-warning {
+    color: $color-warning !important;
+  }
+
+  &.typography-color-error {
+    color: $color-error !important;
+  }
+
+  &.typography-color-info {
+    color: $color-info !important;
+  }
+
+  &.typography-color-text-primary {
+    color: var(--text-primary);
+  }
+
+  &.typography-color-text-secondary {
+    color: var(--text-secondary);
+  }
+
+  &.typography-color-text-disabled {
+    color: $color-gray-400;
+  }
+
+  &.typography-color-inherit {
+    color: inherit;
+  }
+
+  // Text Alignment
+  &.typography-align-left {
+    text-align: left;
+  }
+
+  &.typography-align-center {
+    text-align: center;
+  }
+
+  &.typography-align-right {
+    text-align: right;
+  }
+
+  &.typography-align-justify {
+    text-align: justify;
+  }
+
+  // No Wrap
+  &.typography-nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // Truncate variants
+  &.typography-truncate-1 {
+    @include truncate;
+  }
+
+  &.typography-truncate-2 {
+    @include truncate-2-lines;
+  }
+
+  &.typography-truncate-3 {
+    @include truncate-3-lines;
+  }
+
+  &.typography-truncate-4 {
+    @include truncate-4-lines;
+  }
+
+  // Gutter Bottom
+  &.typography-gutter-bottom {
+    margin-bottom: $spacing-2;
+  }
+}
+
+// Dark mode colors
+.dark {
+  .typography {
+    &.typography-color-secondary {
+      color: $color-gray-400;
+    }
+
+    &.typography-color-success {
+      color: $color-success-light;
+    }
+
+    &.typography-color-warning {
+      color: $color-warning-light;
+    }
+
+    &.typography-color-error {
+      color: $color-error-light;
+    }
+
+    &.typography-color-info {
+      color: $color-info-light;
+    }
+
+    &.typography-color-text-disabled {
+      color: $color-gray-600;
+    }
+  }
+}

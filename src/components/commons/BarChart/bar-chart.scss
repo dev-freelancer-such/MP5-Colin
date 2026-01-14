@@ -1,0 +1,120 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.bar-chart {
+  width: 100%;
+  background: var(--color-bg-white);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-4);
+  box-shadow: $shadow-sm;
+  transition: all $transition-medium $transition-ease;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+
+  :global(.g2-html-annotation) {
+    color: var(--color-text-primary);
+  }
+
+  :global(.g2-tooltip) {
+    background: var(--color-bg-white) !important;
+    border: 1px solid var(--color-border);
+    box-shadow: $shadow-lg;
+
+    .g2-tooltip-title {
+      color: var(--color-text-primary);
+      font-weight: $font-weight-semibold;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: var(--spacing-2);
+      margin-bottom: var(--spacing-2);
+    }
+
+    .g2-tooltip-list-item {
+      color: var(--color-text-secondary);
+
+      .g2-tooltip-value {
+        color: var(--color-text-primary);
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+
+  :global(.g2-legend) {
+    .g2-legend-list-item {
+      .g2-legend-marker {
+        border-radius: 50%;
+      }
+
+      .g2-legend-item-name {
+        color: var(--color-text-primary);
+        font-size: 12px;
+      }
+
+      &:hover {
+        .g2-legend-item-name {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+
+  // Responsive wrapper for horizontal scroll on small screens
+  &__wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--color-border);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-text-secondary);
+      border-radius: 3px;
+
+      &:hover {
+        background: var(--color-primary);
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    min-width: 100%;
+
+    > div {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: var(--spacing-3);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: var(--spacing-2);
+
+    // Enable horizontal scroll on small screens
+    &__wrapper {
+      margin: 0 calc(var(--spacing-2) * -1);
+      padding: 0 var(--spacing-2);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    &__content {
+      min-width: 400px; // Bar chart can be slightly narrower
+
+      > div {
+        width: 100% !important;
+      }
+    }
+  }
+}

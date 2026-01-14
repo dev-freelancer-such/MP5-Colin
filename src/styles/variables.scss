@@ -1,0 +1,185 @@
+// Text
+$color-primary: #4c4c5c;
+$color-primary-50: #aab9ca;
+$color-primary-100: #9ba6b7;
+$color-primary-200: #6c7d7d;
+$color-primary-300: #3f4759;
+$color-primary-400: #6c757d;
+$color-primary-500: #eef2f7;
+
+$color-white: #fff;
+
+// Background
+$color-bg-primary: #353b4a;
+$color-bg-primary-50: #f2f3f6;
+$color-bg-white: #fff;
+$color-bg-blue: #eaf3fc;
+$color-bg-blue-50: #188ae2;
+$color-bg-blue-200: #313a46;
+
+// ==============DARK MODE COLORS================
+
+//Text
+$color-dark-primary: #aab8c5;
+$color-dark-primary-50: #aab9ca;
+$color-dark-primary-100: #8391a2;
+$color-dark-primary-200: #97aac1;
+$color-dark-primary-400: #97aac1;
+$color-dark-primary-500: #252630;
+
+$color-bg-dark-white: #1e1f27;
+
+// Background
+$color-bg-dark-primary: #252630;
+$color-bg-dark-primary-50: #181920;
+$color-bg-dark-primary-100: #181920;
+$color-bg-dark-white: #1e1f27;
+
+$color-bg-dark-blue: #252630;
+$color-bg-dark-blue-50: #e2eeff;
+$color-bg-dark-blue-100: #313a46;
+$color-bg-dark-blue-200: #313a46;
+
+// ==============PRIMARY COLORS================
+
+$color-dark-white: #fff;
+
+$color-primary-600: #252630;
+$color-primary-700: #0369a1;
+$color-primary-800: #075985;
+$color-primary-900: #0c4a6e;
+$color-primary-950: #082f49;
+
+// ==============GRAY COLORS================
+
+$color-gray-50: #f9fafb;
+$color-gray-100: #f3f4f6;
+$color-gray-200: #e5e7eb;
+$color-gray-300: #d1d5db;
+$color-gray-400: #9ca3af;
+$color-gray-500: #6b7280;
+$color-gray-600: #4b5563;
+$color-gray-700: #374151;
+$color-gray-800: #1f2937;
+$color-gray-900: #111827;
+$color-gray-950: #030712;
+
+// ==============STATUS COLORS================
+
+$color-success: #10b981;
+$color-success-hover: #0da572;
+$color-success-active: #0b9163;
+$color-success-light: #34d399;
+
+$color-warning: #f59e0b;
+$color-warning-hover: #dc8b09;
+$color-warning-active: #c37a08;
+$color-warning-light: #fbbf24;
+
+$color-error: #e74c3c;
+$color-error-hover: #dc2626;
+$color-error-active: #c32121;
+$color-error-light: #f87171;
+
+$color-info: #3b82f6;
+$color-info-hover: #2563eb;
+$color-info-active: #1e51d1;
+$color-info-light: #60a5fa;
+
+$bg-light: #ffffff;
+$bg-dark: #0f172a;
+$bg-light-secondary: #f8fafc;
+$bg-dark-secondary: #1e293b;
+
+$text-light-primary: #1f2937;
+$text-light-secondary: #6b7280;
+$text-dark-primary: #f8fafc;
+$text-dark-secondary: #cbd5e1;
+
+$border-light: #e5e7eb;
+$border-dark-light: #ffffff;
+
+$color-dark-gray-300: #453d3d;
+
+// ==============DARK MODE SHADOWS================
+
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+$spacing-1: 4px;
+$spacing-2: 8px;
+$spacing-3: 12px;
+$spacing-4: 16px;
+$spacing-5: 18px;
+$spacing-6: 24px;
+$spacing-8: 32px;
+$spacing-10: 40px;
+$spacing-12: 48px;
+$spacing-16: 64px;
+
+$font-family-base:
+  'Barlow',
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  sans-serif;
+
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-2xl: 24px;
+$font-size-3xl: 30px;
+$font-size-4xl: 36px;
+
+$line-height-xs: 10px;
+$line-height-sm: 12px;
+$line-height-base: 16px;
+$line-height-lg: 18px;
+$line-height-xl: 20px;
+
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+$border-radius-xs: 4px;
+$border-radius-sm: 6px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 20px;
+$border-radius-full: 9999px;
+
+$transition-fast: 150ms;
+$transition-base: 200ms;
+$transition-medium: 300ms;
+$transition-slow: 500ms;
+
+$transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+$transition-ease-in: cubic-bezier(0.4, 0, 1, 1);
+$transition-ease-out: cubic-bezier(0, 0, 0.2, 1);
+$transition-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+$breakpoint-xs: 375px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+$breakpoint-3xl: 1920px;
+
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;

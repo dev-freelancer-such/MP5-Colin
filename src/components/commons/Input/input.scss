@@ -1,0 +1,271 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+// Input Common Styles
+.common-input-container {
+  width: 100%;
+
+  &--full-width {
+    width: 100%;
+  }
+
+  .common-input-label {
+    display: block;
+    margin-bottom: $spacing-1;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-gray-700;
+
+    &--error {
+      color: $color-error;
+    }
+
+    &--disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  .common-input-required {
+    color: $color-error;
+    margin-left: $spacing-1;
+  }
+
+  .common-input-helper {
+    margin-top: $spacing-1;
+    font-size: $font-size-xs;
+    color: $color-gray-500;
+
+    &--error {
+      color: $color-error;
+    }
+  }
+
+  .common-input,
+  .common-input-password,
+  .common-input-textarea,
+  .common-input-search {
+    border-radius: 4px !important;
+    height: 33px !important;
+    min-height: 33px !important;
+
+    &--full-width {
+      width: 100%;
+    }
+
+    input {
+      border-radius: 4px !important;
+      height: 31px !important;
+
+      &::placeholder {
+        font-size: 13px !important;
+      }
+    }
+
+    textarea {
+      border-radius: 4px !important;
+
+      &::placeholder {
+        font-size: 13px !important;
+      }
+    }
+  }
+}
+
+// Ant Design Input overrides - For direct usage (without wrapper)
+.ant-input {
+  border-radius: 4px !important;
+  height: 33px !important;
+  min-height: 33px !important;
+  background-color: var(--color-bg-white);
+
+  &::placeholder {
+    font-size: 13px !important;
+    color: var(--color-border-light) !important;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-bg-white);
+  }
+}
+
+// Input with affix (prefix/suffix icons)
+.ant-input-affix-wrapper {
+  border-radius: 4px !important;
+  height: 33px !important;
+  min-height: 33px !important;
+  padding: 6px 12px !important;
+  background-color: var(--color-bg-white);
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    background-color: var(--color-bg-white);
+  }
+
+  input.ant-input {
+    height: auto !important;
+    min-height: auto !important;
+    background-color: var(--color-bg-white);
+
+    &::placeholder {
+      font-size: 13px !important;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-bg-white);
+    }
+  }
+}
+
+.ant-input-password {
+  border-radius: 4px !important;
+  height: 33px !important;
+  min-height: 33px !important;
+  background-color: var(--color-bg-white);
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    background-color: var(--color-bg-white);
+  }
+
+  input.ant-input {
+    height: auto !important;
+    min-height: auto !important;
+    background-color: var(--color-bg-white);
+
+    &::placeholder {
+      font-size: 13px !important;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-bg-white);
+    }
+  }
+}
+
+// Search input
+.common-input-search {
+  .ant-input-prefix {
+    margin-right: 8px;
+    color: rgba(0, 0, 0, 0.45);
+
+    .anticon {
+      font-size: 14px;
+    }
+  }
+}
+
+.ant-input-search {
+  .ant-input {
+    border-radius: 4px !important;
+    height: 33px !important;
+    min-height: 33px !important;
+    background-color: var(--color-bg-white);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-bg-white);
+    }
+  }
+
+  .ant-input-affix-wrapper {
+    border-radius: 4px 0 0 4px !important;
+    height: 33px !important;
+    min-height: 33px !important;
+    background-color: var(--color-bg-white);
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      background-color: var(--color-bg-white);
+    }
+  }
+
+  &-button {
+    border-radius: 0 4px 4px 0 !important;
+    height: 33px !important;
+    min-height: 33px !important;
+  }
+}
+
+// TextArea - Keep default height behavior
+.ant-input-textarea {
+  textarea.ant-input {
+    border-radius: 4px !important;
+    height: auto !important;
+    min-height: 96px !important; // 4 rows default
+    background-color: var(--color-bg-white);
+
+    &::placeholder {
+      font-size: 13px !important;
+      color: var(--color-border-light) !important;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-bg-white);
+    }
+  }
+}
+
+// Input Group
+.ant-input-group-addon {
+  border-radius: 4px !important;
+  height: 33px !important;
+  min-height: 33px !important;
+
+  &:first-child {
+    border-radius: 4px 0 0 4px !important;
+  }
+
+  &:last-child {
+    border-radius: 0 4px 4px 0 !important;
+  }
+
+  button {
+    height: 31px !important;
+  }
+}
+
+// Override Ant Design Form Item styles
+.ant-form-item {
+  .ant-input,
+  .ant-input-affix-wrapper,
+  .ant-input-password {
+    border-radius: 4px !important;
+    height: 33px !important;
+    min-height: 33px !important;
+    background-color: var(--color-bg-white);
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      background-color: var(--color-bg-white);
+    }
+  }
+}
+
+// TextArea
+.ant-input-textarea {
+  textarea {
+    border-radius: 4px !important;
+  }
+}
+
+// Input Group
+.ant-input-group-addon {
+  border-radius: 4px !important;
+
+  &:first-child {
+    border-radius: 4px 0 0 4px !important;
+  }
+
+  &:last-child {
+    border-radius: 0 4px 4px 0 !important;
+  }
+}

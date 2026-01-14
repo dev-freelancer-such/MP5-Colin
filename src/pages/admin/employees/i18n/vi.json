@@ -1,0 +1,18 @@
+{
+  "avatar": " Ảnh đại diện",
+  "company": "Công ty",
+  "department": "Phòng ban",
+  "team": "Đội nhóm",
+  "status": "Trạng thái",
+  "position": "Chức vụ",
+  "status-working": "Trạng thái làm việc",
+
+  "working": "Đang làm việc",
+  "probation": "Thử việc",
+  "resigned": "Đã nghỉ việc",
+  "terminated": "Bị sa thải",
+  "on_leave": "Đang nghỉ phép",
+  "start_date": "Ngày bắt đầu",
+  "end_date": "Ngày kết thúc",
+  "action": "Hành động"
+}

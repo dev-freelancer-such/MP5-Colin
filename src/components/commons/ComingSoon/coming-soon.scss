@@ -1,0 +1,44 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.coming-soon {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8);
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+    width: 600px;
+    object-fit: contain;
+  }
+
+  // Responsive
+  @media (max-width: $breakpoint-lg) {
+    &__image {
+      width: 500px;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    min-height: 350px;
+    padding: var(--spacing-6);
+
+    &__image {
+      width: 400px;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    min-height: 300px;
+    padding: var(--spacing-4);
+
+    &__image {
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+@import '../../../styles/mixins.scss';
+
+.create-form-modal {
+  &.common-modal {
+    .ant-modal-content {
+      padding: var(--spacing-6);
+      border-radius: var(--radius-md);
+
+      .ant-modal-body {
+        padding: 0 !important;
+      }
+    }
+  }
+
+  .create-form-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+
+    .create-form-header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-2);
+
+      .create-form-title {
+        margin: 0;
+        color: var(--text-primary);
+      }
+
+      .create-form-description {
+        margin: 0;
+        color: var(--text-secondary);
+      }
+    }
+
+    .create-form-body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-4);
+      max-height: 60vh;
+      overflow-y: auto;
+      padding-right: var(--spacing-2);
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: var(--background-secondary);
+        border-radius: var(--radius-sm);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: var(--radius-sm);
+
+        &:hover {
+          background: var(--text-tertiary);
+        }
+      }
+
+      .create-form-field {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-2);
+
+        &__label {
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-1);
+
+          .required-mark {
+            color: var(--color-error);
+            font-size: 14px;
+            margin-left: 2px;
+          }
+        }
+
+        &__input {
+          width: 100%;
+
+          input,
+          textarea,
+          select {
+            width: 100%;
+          }
+        }
+
+        &__error {
+          margin: 0;
+          color: var(--color-error);
+        }
+      }
+    }
+
+    .create-form-actions {
+      width: 100%;
+      display: flex;
+      gap: var(--spacing-4);
+      margin-top: var(--spacing-2);
+
+      button {
+        flex: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .create-form-modal {
+    &.common-modal {
+      .ant-modal-content {
+        padding: var(--spacing-4);
+      }
+    }
+
+    .create-form-content {
+      gap: var(--spacing-4);
+
+      .create-form-body {
+        max-height: 50vh;
+      }
+
+      .create-form-actions {
+        flex-direction: column;
+        gap: var(--spacing-3);
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .create-form-modal {
+    &.common-modal {
+      .ant-modal-content {
+        padding: var(--spacing-3);
+      }
+    }
+
+    .create-form-content {
+      gap: var(--spacing-3);
+
+      .create-form-body {
+        gap: var(--spacing-3);
+        max-height: 45vh;
+      }
+    }
+  }
+}

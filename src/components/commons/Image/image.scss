@@ -1,0 +1,103 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.common-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  &.common-image-cover {
+    object-fit: cover;
+  }
+
+  &.common-image-contain {
+    object-fit: contain;
+  }
+
+  &.common-image-fill {
+    object-fit: fill;
+  }
+
+  &.common-image-none {
+    object-fit: none;
+  }
+
+  &.common-image-scale-down {
+    object-fit: scale-down;
+  }
+}
+
+// Ant Design Image overrides
+.ant-image {
+  display: inline-block;
+
+  .ant-image-img {
+    @include transition(all, $transition-base);
+
+    &:hover {
+      opacity: 0.95;
+    }
+  }
+
+  .ant-image-mask {
+    border-radius: inherit;
+  }
+
+  .ant-image-placeholder {
+    background-color: $color-gray-100;
+    @include flex-center;
+  }
+}
+
+// Image preview
+.ant-image-preview-wrap {
+  .ant-image-preview-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+  }
+
+  .ant-image-preview-operations {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: $border-radius-lg;
+    padding: $spacing-2 $spacing-4;
+
+    .ant-image-preview-operations-operation {
+      @include transition(all, $transition-fast);
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+}
+
+// Avatar image with rounded preview
+.user-avatar {
+  .ant-image-img {
+    border-radius: var(--radius-full);
+    object-fit: cover;
+  }
+}
+
+// Global preview for rounded/circular images
+:global {
+  .ant-image-preview-root {
+    .ant-image-preview-img {
+      &.rounded-preview {
+        border-radius: var(--radius-full) !important;
+        object-fit: cover !important;
+      }
+    }
+  }
+}
+
+// Dark mode
+.dark {
+  .ant-image {
+    .ant-image-placeholder {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+}

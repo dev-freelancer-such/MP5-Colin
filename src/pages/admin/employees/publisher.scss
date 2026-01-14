@@ -1,0 +1,192 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.publishers-page {
+  max-width: 100%;
+
+  .rounded-preview {
+    border-radius: var(--radius-full);
+  }
+
+  .section-header {
+    margin-bottom: $spacing-6;
+
+    h5 {
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-bold;
+      color: $text-light-primary;
+      margin: 0;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-6;
+    margin-bottom: $spacing-8;
+  }
+
+  .table-container {
+    box-shadow: $shadow-sm;
+
+    .publishers-table,
+    .traffic-table,
+    .outsource-table,
+    .betting-table {
+      .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: $border-radius-md;
+        object-fit: cover;
+        // background: $color-gray-200;
+      }
+
+      // Fix cho fixed columns khi scroll ngang
+      // .ant-table-cell-fix-left,
+      // .ant-table-cell-fix-right {
+      //   background: $bg-light !important;
+      //   z-index: 2;
+      // }
+
+      // Ẩn shadow mặc định, Ant Design sẽ tự động thêm khi scroll
+      .ant-table-cell-fix-left-last::after,
+      .ant-table-cell-fix-right-first::after {
+        box-shadow: none !important;
+      }
+
+      .ant-table-thead .ant-table-cell-fix-left,
+      .ant-table-thead .ant-table-cell-fix-right {
+        // background: $bg-light !important;
+      }
+
+      // Additional status styles for traffic and outsource
+      .user-status {
+        &.status-premium {
+          color: #a855f7;
+
+          &::before {
+            background: #a855f7;
+          }
+        }
+
+        &.status-standard {
+          color: #3b82f6;
+
+          &::before {
+            background: #3b82f6;
+          }
+        }
+
+        &.status-low {
+          color: #64748b;
+
+          &::before {
+            background: #64748b;
+          }
+        }
+
+        &.status-testing {
+          color: #f59e0b;
+
+          &::before {
+            background: #f59e0b;
+          }
+        }
+
+        &.status-stopped {
+          color: #ef4444;
+
+          &::before {
+            background: #ef4444;
+          }
+        }
+
+        &.status-blocked {
+          color: #dc2626;
+
+          &::before {
+            background: #dc2626;
+          }
+        }
+
+        // Betting/Gambling specific status styles
+        &.status-kol {
+          color: #8b5cf6;
+
+          &::before {
+            background: #8b5cf6;
+          }
+        }
+
+        &.status-outsource {
+          color: #06b6d4;
+
+          &::before {
+            background: #06b6d4;
+          }
+        }
+
+        &.status-direct {
+          color: #10b981;
+
+          &::before {
+            background: #10b981;
+          }
+        }
+
+        &.status-high {
+          background-color: #fee2e2;
+          color: #dc2626;
+
+          &::before {
+            background: #dc2626;
+          }
+        }
+
+        &.status-medium {
+          background-color: #fef3c7;
+          color: #f59e0b;
+
+          &::before {
+            background: #f59e0b;
+          }
+        }
+      }
+    }
+  }
+}
+
+.avatar-column {
+  border-radius: var(--radius-full);
+  object-fit: cover;
+
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+// Responsive
+@media (max-width: $breakpoint-lg) {
+  .publishers-page {
+    padding: $spacing-4;
+
+    &__cards {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: $spacing-4;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .publishers-page {
+    &__cards {
+      grid-template-columns: 1fr;
+      gap: $spacing-3;
+    }
+
+    .table-container {
+      padding: $spacing-4;
+      overflow-x: auto;
+    }
+  }
+}

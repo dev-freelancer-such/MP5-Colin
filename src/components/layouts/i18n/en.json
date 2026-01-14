@@ -1,0 +1,19 @@
+{
+  "menu": {
+    "navigation": "Navigation",
+    "dashboard": "Dashboard",
+    "calendar": "Calendar",
+    "publisher": "Publisher",
+    "publisher_management": "Publisher Management",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "publishers": "Publishers",
+    "traffic": "Organic traffic",
+    "employees": "Employees"
+  },
+  "layouts": "Layouts",
+  "multi_level": "Multi Level",
+  "level_2_1": "Level 2.1",
+  "level_2_2": "Level 2.2"
+}

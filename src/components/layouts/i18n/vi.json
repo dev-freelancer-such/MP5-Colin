@@ -1,0 +1,19 @@
+{
+  "menu": {
+    "navigation": "Điều hướng",
+    "dashboard": "Bảng điều khiển",
+    "calendar": "Lịch",
+    "publisher": "Nhà xuất bản",
+    "publisher_management": "Quản lý nhà xuất bản",
+    "profile": "Hồ sơ",
+    "settings": "Cài đặt",
+    "logout": "Đăng xuất",
+    "publishers": "Các nhà xuất bản",
+    "traffic": "Lưu lượng truy cập tự nhiên",
+    "employees": "Nhân viên"
+  },
+  "layouts": "Bố cục",
+  "multi_level": "Đa cấp (Cha)",
+  "level_2_1": "Cấp 2.1 (Con)",
+  "level_2_2": "Cấp 2.2 (Con)"
+}

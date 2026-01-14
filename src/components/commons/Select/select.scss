@@ -1,0 +1,138 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.common-select-container {
+  width: 100%;
+
+  .common-select-label {
+    display: block;
+    margin-bottom: $spacing-2;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-gray-700;
+
+    .common-select-required {
+      color: $color-error;
+      margin-left: $spacing-1;
+    }
+  }
+
+  .common-select-error {
+    display: block;
+    margin-top: $spacing-1;
+    font-size: $font-size-xs;
+    color: $color-error;
+  }
+}
+
+.ant-select {
+  width: 100%;
+
+  .ant-select-selector {
+    border-radius: 4px !important;
+    min-height: 33px !important;
+    padding: 4px 11px !important;
+    @include transition(all, $transition-base);
+
+    .ant-select-selection-search {
+      input {
+        height: 100% !important;
+      }
+    }
+
+    .ant-select-selection-placeholder {
+      font-size: $font-size-sm;
+    }
+
+    .ant-select-selection-item {
+      font-size: $font-size-sm;
+      line-height: 23px !important;
+    }
+  }
+
+  &:hover .ant-select-selector {
+    border-color: var(--color-primary-400);
+  }
+
+  &.ant-select-focused .ant-select-selector {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(var(--color-primary-500), 0.1);
+  }
+}
+
+// Select dropdown
+.ant-select-dropdown {
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-lg;
+
+  .ant-select-item {
+    font-size: $font-size-sm;
+    padding: $spacing-2 $spacing-3;
+    @include transition(all, $transition-fast);
+    position: relative;
+
+    &:hover {
+      background-color: $color-gray-100;
+    }
+
+    &.ant-select-item-option-selected {
+      background-color: var(--color-bg-blue) !important;
+      color: $text-light-primary;
+      font-weight: $font-weight-medium;
+      padding-right: 32px;
+
+      &::after {
+        content: '✓';
+        position: absolute;
+        right: $spacing-3;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--color-bg-btn-primary);
+        font-size: 16px;
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    &.ant-select-item-option-active {
+      background-color: var(--color-bg-blue) !important;
+    }
+  }
+}
+
+// Dark mode
+.dark {
+  .common-select-container {
+    .common-select-label {
+      color: $color-gray-300;
+    }
+  }
+
+  .ant-select-dropdown {
+    background-color: $bg-dark-secondary;
+
+    .ant-select-item {
+      color: $text-dark-primary;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      &.ant-select-item-option-selected {
+        background-color: rgba(
+          245,
+          158,
+          11,
+          0.2
+        ) !important; // Dark mode yellow
+
+        &::after {
+          color: #fbbf24; // Brighter yellow for dark mode
+        }
+      }
+
+      &.ant-select-item-option-active {
+        background-color: rgba(245, 158, 11, 0.15) !important;
+      }
+    }
+  }
+}

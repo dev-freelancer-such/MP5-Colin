@@ -1,0 +1,27 @@
+{
+  "enter-to-search": "Enter to search",
+  "create": "Create",
+  "export": "Export",
+
+  "modal": {
+    "confirm": {
+      "confirm": "Confirm",
+      "are-you-sure": "Are you sure you want to proceed with this action?",
+      "cancel": "Cancel"
+    },
+    "confirm-delete": {
+      "confirm-delete": "Confirm deletion",
+      "are-you-sure": "Are you sure you want to delete? This action cannot be undone.",
+      "cancel": "Cancel",
+      "confirm": "Delete"
+    }
+  },
+
+  "table": {
+    "column": {
+      "actions": "Actions",
+      "delete": "Delete",
+      "update": "Update"
+    }
+  }
+}

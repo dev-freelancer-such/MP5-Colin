@@ -1,0 +1,27 @@
+{
+  "enter-to-search": "Nhập để tìm kiếm",
+  "create": "Tạo mới",
+  "export": "Xuất",
+
+  "modal": {
+    "confirm": {
+      "confirm": "Xác nhận",
+      "are-you-sure": "Bạn có chắc chắn muốn thực hiện hành động này?",
+      "cancel": "Hủy"
+    },
+    "confirm-delete": {
+      "confirm-delete": "Xác nhận xóa",
+      "are-you-sure": "Bạn có chắc chắn muốn xóa? Hành động này không thể hoàn tác.",
+      "cancel": "Hủy",
+      "confirm": "Xoá"
+    }
+  },
+
+  "table": {
+    "column": {
+      "actions": "Hành động",
+      "delete": "Xoá",
+      "update": "Chỉnh sửa"
+    }
+  }
+}
