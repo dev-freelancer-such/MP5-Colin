@@ -1,15 +1,18 @@
 import { initReactI18next } from 'react-i18next';
+
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
+
 import enLayoutTranslation from '@/components/layouts/i18n/en.json';
 import viLayoutTranslation from '@/components/layouts/i18n/vi.json';
 import enDashboardTranslation from '@/pages/admin/Dashboard/i18n/en.json';
 import viDashboardTranslation from '@/pages/admin/Dashboard/i18n/vi.json';
-import enPublishersTranslation from '@/pages/admin/employees/i18n/en.json';
-import viPublishersTranslation from '@/pages/admin/employees/i18n/vi.json';
 import enTrafficTranslation from '@/pages/admin/Traffic/i18n/en.json';
 import viTrafficTranslation from '@/pages/admin/Traffic/i18n/vi.json';
+import enPublishersTranslation from '@/pages/admin/website/i18n/en.json';
+import viPublishersTranslation from '@/pages/admin/website/i18n/vi.json';
+
 import enAuthTranslation from './en/auth.json';
 import enCommonTranslation from './en/common.json';
 import viAuthTranslation from './vi/auth.json';

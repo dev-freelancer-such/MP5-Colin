@@ -1,10 +1,10 @@
 import type { TFunction } from 'i18next';
+
 import { getPublisherColumns } from '@/constants/employees.constant';
+
 import type { TableSchemaInterface } from '@/models/common/table.model';
-import {
-  ExportTypeEnums,
-  TypeFormFieldEnums,
-} from '../../../helpers/enums/common.enum';
+
+import { ExportTypeEnums } from '../../../helpers/enums/common.enum';
 import { employeesApi } from './api/employees.api';
 
 const employeesSchema = (t: TFunction): TableSchemaInterface => {
@@ -49,28 +49,41 @@ const employeesSchema = (t: TFunction): TableSchemaInterface => {
       filters: {},
     },
     columnsActions: {
+      createRecordModal: {
+        endpoint: '',
+        label: 'Tạo website',
+        responsiveCol: {
+          xs: 24,
+          sm: 12,
+          md: 4,
+          lg: 3,
+        },
+      },
       changeStatus: {
         endpoint: employeesApi?.UPDATE_STATUS_EMPLOYEES,
       },
       deleteRecord: {
         endpoint: employeesApi?.DELETE_EMPLOYEES,
       },
-      updateRecordModal: {
-        endpoint: employeesApi?.DELETE_EMPLOYEES,
-        formFields: [
-          {
-            key: 'employee_name',
-            nameField: 'employee_name',
-            typeField: TypeFormFieldEnums?.TEXT,
-            colSpan: '1',
-            label: 'Tên nhân viên',
-            placeholder: 'Nhập tên nhân viên',
-          },
-        ],
-      },
+      // updateRecordModal: {
+      //   endpoint: employeesApi?.DELETE_EMPLOYEES,
+      //   formFields: [
+      //     {
+      //       key: 'employee_name',
+      //       nameField: 'employee_name',
+      //       typeField: TypeFormFieldEnums?.TEXT,
+      //       colSpan: '1',
+      //       label: 'Tên nhân viên',
+      //       placeholder: 'Nhập tên nhân viên',
+      //     },
+      //   ],
+      // },
     },
 
     columns: getPublisherColumns(t),
+    config: {
+      modalWidth: '90vw',
+    },
   };
 };
 

@@ -6,6 +6,7 @@ const ADMIN_ROUTER = {
   CALENDAR: `${adminRouter}/calendar`,
   EMPLOYEES: `${adminRouter}/employees`,
   TRAFFIC: `${adminRouter}/traffic`,
+  WEBSITE: `${adminRouter}/website`,
 
   // Father demo route
   LAYOUTS: `${adminRouter}/levels`,

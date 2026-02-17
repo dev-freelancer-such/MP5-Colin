@@ -15,7 +15,7 @@
   .create-form-content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-6);
+    gap: var(--spacing-3);
 
     .create-form-header {
       display: flex;
@@ -99,8 +99,11 @@
       gap: var(--spacing-4);
       margin-top: var(--spacing-2);
 
+      justify-content: center;
+
       button {
         flex: 1;
+        max-width: 150px;
       }
     }
   }

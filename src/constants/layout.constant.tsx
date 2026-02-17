@@ -1,8 +1,13 @@
 import { ReactSVG } from 'react-svg';
+
 import type { MenuProps } from 'antd';
+
 import { DropdownProfileEnums } from '@/helpers/enums/layout.enum';
-import Typography from '@/components/commons/Typography';
+
 import { ADMIN_ROUTER } from '@/routes/constants';
+
+import Typography from '@/components/commons/Typography';
+
 import icCalendar from '@/assets/icons/common/ic-calendar.svg';
 import icDashboard from '@/assets/icons/common/ic-dashboard.svg';
 import icInvoice from '@/assets/icons/common/ic-invoice.svg';
@@ -64,6 +69,15 @@ const menuOptions = (t: (key: string) => string): MenuProps['items'] => {
       icon: <ReactSVG src={icDashboard} width={24} height={24} fontSize={24} />,
     },
     {
+      key: ADMIN_ROUTER?.WEBSITE,
+      label: (
+        <Typography variant="subtitle2" className="break-word">
+          {t('menu.website')}
+        </Typography>
+      ),
+      icon: <ReactSVG src={icDashboard} width={24} height={24} fontSize={24} />,
+    },
+    {
       key: 'publisher-management',
       label: (
         <Typography variant="subtitle2" className="break-word">
@@ -72,14 +86,6 @@ const menuOptions = (t: (key: string) => string): MenuProps['items'] => {
       ),
       icon: <ReactSVG src={icInvoice} width={24} height={24} fontSize={24} />,
       children: [
-        {
-          key: ADMIN_ROUTER?.EMPLOYEES,
-          label: (
-            <Typography variant="subtitle2" className="break-word">
-              {t('menu.employees')}
-            </Typography>
-          ),
-        },
         {
           key: ADMIN_ROUTER?.TRAFFIC,
           label: (

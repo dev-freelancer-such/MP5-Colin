@@ -1,11 +1,12 @@
 import { lazy } from 'react';
+
 import { ADMIN_ROUTER, AUTH_ROUTER } from './constants';
 
 const Login = lazy(() => import('@/pages/auth/Sign-in'));
 const SignUp = lazy(() => import('@/pages/auth/Sign-Up'));
 const ForgotPassword = lazy(() => import('@/pages/auth/Forgot-Password'));
 const Dashboard = lazy(() => import('@/pages/admin/Dashboard'));
-const Publisher = lazy(() => import('@/pages/admin/employees'));
+const Website = lazy(() => import('@/pages/admin/website'));
 const Traffic = lazy(() => import('@/pages/admin/Traffic'));
 const ChildrenFirst = lazy(() => import('@/pages/admin/ChildrenFirst'));
 const ChildrenSecond = lazy(() => import('@/pages/admin/ChildrenSecondary'));
@@ -16,12 +17,6 @@ const routes_admin = [
     path: ADMIN_ROUTER?.DASHBOARD,
     component: Dashboard,
     name: 'admin-dashboard',
-  },
-  {
-    key: 'admin-employees',
-    path: ADMIN_ROUTER?.EMPLOYEES,
-    component: Publisher,
-    name: 'admin-employees',
   },
   {
     key: 'admin-traffic',
@@ -40,6 +35,12 @@ const routes_admin = [
     path: ADMIN_ROUTER?.CHILDREN_SECOND,
     component: ChildrenSecond,
     name: 'admin-children-second',
+  },
+  {
+    key: 'admin-website',
+    path: ADMIN_ROUTER?.WEBSITE,
+    component: Website,
+    name: 'admin-website',
   },
 ];
 

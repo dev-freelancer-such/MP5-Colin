@@ -1,0 +1,113 @@
+.confirm-delete-modal {
+  position: relative;
+}
+.confirm-delete-modal.common-modal .ant-modal-content {
+  padding: var(--spacing-6);
+  border-radius: var(--radius-md);
+  border-top: 5px solid var(--color-error);
+  overflow: visible !important;
+}
+.confirm-delete-modal.common-modal .ant-modal-content .ant-modal-body {
+  padding: var(--spacing-1) 0px 0px !important;
+}
+.confirm-delete-modal .confirm-delete-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-5);
+}
+.confirm-delete-modal .confirm-delete-content__top {
+  gap: var(--spacing-5);
+}
+.confirm-delete-modal .confirm-delete-content__top .confirm-delete-icon {
+  min-width: 60px;
+  width: 60px !important;
+  height: 60px;
+  background-color: var(--color-error);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.confirm-delete-modal .confirm-delete-content__top .confirm-delete-icon svg {
+  margin-top: 5px;
+  width: 28px;
+  height: 28px;
+  color: var(--color-white);
+}
+.confirm-delete-modal .confirm-delete-content__top .confirm-delete-label {
+  margin: 0;
+}
+.confirm-delete-modal .confirm-delete-content .confirm-delete-description {
+  margin: var(--spacing-2) 0 0;
+  color: var(--text-secondary);
+}
+.confirm-delete-modal .confirm-delete-content .confirm-delete-actions {
+  width: 100%;
+  display: flex;
+  gap: var(--spacing-5);
+  margin-top: var(--spacing-3);
+}
+.confirm-delete-modal .confirm-delete-content .confirm-delete-actions .confirm-delete-cancel {
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+.confirm-delete-modal .confirm-delete-content .confirm-delete-actions .confirm-delete-cancel:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.confirm-delete-modal .confirm-delete-content .confirm-delete-actions .confirm-delete-confirm {
+  background-color: var(--color-error);
+  border-color: var(--color-error);
+}
+.confirm-delete-modal .confirm-delete-content .confirm-delete-actions .confirm-delete-confirm:hover {
+  background-color: var(--color-error-hover);
+  border-color: var(--color-error-hover);
+}
+.confirm-delete-modal .confirm-delete-content .confirm-delete-actions .confirm-delete-confirm:active {
+  background-color: var(--color-error-active);
+  border-color: var(--color-error-active);
+}
+
+@media (max-width: 768px) {
+  .confirm-delete-content {
+    gap: 12px;
+  }
+  .confirm-delete-content .confirm-delete-icon svg {
+    width: 64px;
+    height: 64px;
+  }
+  .confirm-delete-content .confirm-delete-label {
+    font-size: 20px;
+  }
+  .confirm-delete-content .confirm-delete-description {
+    font-size: 13px;
+  }
+  .confirm-delete-content .confirm-delete-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .confirm-delete-content .confirm-delete-actions .confirm-delete-cancel,
+  .confirm-delete-content .confirm-delete-actions .confirm-delete-confirm {
+    width: 100%;
+    height: 44px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .confirm-delete-content .confirm-delete-icon svg {
+    width: 56px;
+    height: 56px;
+  }
+  .confirm-delete-content .confirm-delete-label {
+    font-size: 18px;
+  }
+  .confirm-delete-content .confirm-delete-description {
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=confirm-delete.css.map */

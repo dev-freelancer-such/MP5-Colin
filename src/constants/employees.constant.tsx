@@ -1,6 +1,9 @@
 import { Tag } from 'antd';
+
 import type { TFunction } from 'i18next';
+
 import type { EmployeeInterface } from '@/models/employees.model';
+
 import { Image, Switch, Typography } from '@/components/commons';
 import type { CommonTableColumn } from '@/components/commons/Table';
 

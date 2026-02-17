@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { ReactSVG } from 'react-svg';
 import { Dropdown, Popover, Segmented, Skeleton, Table, Tooltip } from 'antd';
 import type { MenuProps, TableProps } from 'antd';
 import { isEmpty } from 'lodash';
-import { useRouter } from '@/hooks/useRouter';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { ReactSVG } from 'react-svg';
+
 import {
   DEFAULT_PAGE,
   DEFAULT_PER_PAGE,
@@ -15,6 +15,7 @@ import {
   TABLE_TYPE_KEY,
 } from '@/constants/common.constant';
 import { ActionsTypeEnums, TableTypeEnums } from '@/helpers/enums/common.enum';
+
 import type { ParamsInterface } from '@/models/common/common.model';
 import type {
   CommonTableColumn,
@@ -22,10 +23,14 @@ import type {
   ExportInterface,
   OptionsInterface,
 } from '@/models/common/table.model';
+
+import { useRouter } from '@/hooks/useRouter';
 import { getRequest } from '@/services/requests';
+
 import ConfirmModal from '@/components/modals/confirm';
 import ConfirmDeleteModal from '@/components/modals/confirm-delete';
 import CreateFormModal from '@/components/modals/create-form';
+
 import icExport from '@/assets/icons/common/ic-export.svg';
 import icFilter from '@/assets/icons/common/ic-filter.svg';
 import icGrid from '@/assets/icons/common/ic-grid.svg';
@@ -34,13 +39,15 @@ import icList from '@/assets/icons/common/ic-list.svg';
 import icPlus from '@/assets/icons/common/ic-plus.svg';
 import icTrash from '@/assets/icons/common/ic-trash.svg';
 import icUpdate from '@/assets/icons/common/ic-update.svg';
-import './table.scss';
-import './table.scss';
+
 import ButtonCommon from '../Button';
 import { InputSearch } from '../Input';
 import CommonPagination from '../Pagination';
 import CommonSelect from '../Select';
 import Typography from '../Typography';
+
+import './table.scss';
+import './table.scss';
 
 function CommonTable<T extends Record<string, unknown>>({
   isLoading = false,
@@ -78,8 +85,9 @@ function CommonTable<T extends Record<string, unknown>>({
 
   const { search, create, exports, btnImport, filters, status, btnTableType } =
     schema?.headerActions ?? {};
-
-  const { deleteRecord, updateRecordModal } = schema?.columnsActions ?? {};
+  const { modalWidth } = schema?.config ?? {};
+  const { createRecordModal, deleteRecord, updateRecordModal } =
+    schema?.columnsActions ?? {};
 
   const {
     updateParams,
@@ -127,6 +135,18 @@ function CommonTable<T extends Record<string, unknown>>({
   useEffect(() => {
     fetchDataApi();
   }, [fetchDataApi]);
+
+  // Modal action props
+  const modalActionProps = useMemo(() => {
+    switch (actionType) {
+      case ActionsTypeEnums?.CREATE:
+        return createRecordModal;
+      case ActionsTypeEnums?.UPDATE_MODAL:
+        return updateRecordModal;
+      default:
+        return;
+    }
+  }, [actionType, createRecordModal, updateRecordModal]);
 
   const handlePageChange = (page: number, pageSize?: number) => {
     updateParams({
@@ -279,6 +299,10 @@ function CommonTable<T extends Record<string, unknown>>({
     updateParams({ [`${status?.keyStatus}`]: value });
   }
 
+  function handleCreateUpdateRecord() {
+    // TODO
+  }
+
   function handleChangeTableType(value: string) {
     updateParams({ [TABLE_TYPE_KEY]: value });
   }
@@ -426,7 +450,7 @@ function CommonTable<T extends Record<string, unknown>>({
         {...restProps}
       />
 
-      {pagination && typeof pagination !== 'boolean' && (
+      {pagination && (
         <CommonPagination
           total={pagination.total || 0}
           current={Number(currentPage) || 1}
@@ -477,12 +501,15 @@ function CommonTable<T extends Record<string, unknown>>({
             actionType === ActionsTypeEnums?.UPDATE_MODAL ||
             actionType === ActionsTypeEnums?.CREATE
           }
+          onSubmit={modalActionProps?.handleAction || handleCreateUpdateRecord}
           onCancel={() => setActionType(null)}
-          onConfirm={updateRecordModal?.handleCreate || handleConfirm}
-          label={updateRecordModal?.label}
-          description={updateRecordModal?.description}
-          cancelText={updateRecordModal?.cancelText}
-          confirmText={updateRecordModal?.confirmText}
+          // label={modalActionProps?.label || ''}
+          // cancelText={modalActionProps?.cancelText || t('modal.cancel')}
+          // submitText={modalActionProps?.submitText || t('modal.submit')}
+          // formFields={modalActionProps?.formFields || []}
+          width={modalWidth}
+          // responsiveCol={modalActionProps?.responsiveCol}
+          modalActionProps={modalActionProps}
         />
       )}
     </div>

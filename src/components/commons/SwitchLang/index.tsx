@@ -1,10 +1,14 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { Select } from 'antd';
+
 import imgEngFlag from '@/assets/images/common/img-eng-flag.png';
 import imgVietNamFlag from '@/assets/images/common/img-vietnam-flag.png';
-import './lang-switcher.scss';
+
 import { Image } from '../Image/image';
+
+import './lang-switcher.scss';
 
 const { Option } = Select;
 
@@ -33,9 +37,11 @@ const LanguageSwitcher: React.FC = () => {
       size="middle"
       className="language-switcher-circle"
       suffixIcon={null}
-      dropdownStyle={{
-        minWidth: 40,
-      }}
+      // styles={{
+      //   dropdown: {
+      //     minWidth: 40,
+      //   },
+      // }}
       popupClassName="change-language"
     >
       {languages.map((language) => (

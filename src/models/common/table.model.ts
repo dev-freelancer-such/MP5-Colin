@@ -1,6 +1,7 @@
-import React from 'react';
 import type { ColumnType, TableProps } from 'antd/es/table';
 import type { TablePaginationConfig } from 'antd/es/table/interface';
+import React, { type Key, type ReactNode } from 'react';
+
 import type {
   ExportTypeEnums,
   TypeFormFieldEnums,
@@ -20,7 +21,7 @@ export interface CommonTableColumn<T = Record<string, unknown>>
 }
 
 export interface FormFieldInterface {
-  key: string;
+  key?: string;
   nameField: string;
   typeField: TypeFormFieldEnums;
   colSpan?: string;
@@ -30,11 +31,36 @@ export interface FormFieldInterface {
   options?: Array<{ label: string; value: string }>;
   disabled?: boolean;
   defaultValue?: string | number | boolean;
+  endPoint?: string;
+  disableValues?: Key[];
+  isRequired?: boolean;
 }
 
 export interface OptionsInterface {
   label: string;
   value: string;
+}
+
+export interface ResponsiveColInterface {
+  xs?: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
+}
+
+export interface RecordModalInterface<T = Record<string, unknown>> {
+  endpoint: string;
+  label: string;
+  handleAction?: (record: T) => void;
+  formFields?: FormFieldInterface[];
+  cancelText?: string;
+  submitText?: string;
+  renderForm?: ReactNode;
+  responsiveCol?: ResponsiveColInterface;
+  description?: string;
+  colsPerRow?: number;
+  width?: number | string;
 }
 
 export interface ExportInterface {
@@ -82,6 +108,8 @@ export interface TableSchemaInterface<T = Record<string, unknown>> {
     params?: Record<string, unknown>;
   };
   columnsActions?: {
+    createRecordModal?: RecordModalInterface<T>;
+    updateRecordModal?: RecordModalInterface<T>;
     changeStatus?: {
       endpoint: string;
       handleChangeStatus?: (
@@ -99,15 +127,9 @@ export interface TableSchemaInterface<T = Record<string, unknown>> {
       cancelText?: string;
       confirmText?: string;
     };
-    updateRecordModal?: {
-      endpoint: string;
-      handleCreate?: (record: T) => void;
-      label?: string;
-      formFields: FormFieldInterface[];
-      description?: string;
-      cancelText?: string;
-      confirmText?: string;
-    };
+  };
+  config?: {
+    modalWidth?: number | string;
   };
 }
 

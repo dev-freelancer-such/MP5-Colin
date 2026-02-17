@@ -1,0 +1,95 @@
+.confirm-modal {
+  position: relative;
+}
+.confirm-modal.common-modal .ant-modal-content {
+  padding: var(--spacing-6);
+  border-radius: var(--radius-md);
+  border-top: 5px solid var(--color-success);
+  overflow: visible !important;
+}
+.confirm-modal.common-modal .ant-modal-content .ant-modal-body {
+  padding: var(--spacing-1) 0px 0px !important;
+}
+.confirm-modal .confirm-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-5);
+}
+.confirm-modal .confirm-content__top {
+  gap: var(--spacing-5);
+}
+.confirm-modal .confirm-content__top .confirm-icon {
+  min-width: 60px;
+  width: 60px !important;
+  height: 60px;
+  background-color: var(--color-success);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.confirm-modal .confirm-content__top .confirm-icon svg {
+  margin-top: 5px;
+  width: 28px;
+  height: 28px;
+  color: var(--color-white);
+}
+.confirm-modal .confirm-content__top .confirm-label {
+  margin: 0;
+}
+.confirm-modal .confirm-content .confirm-description {
+  margin: var(--spacing-2) 0 0;
+  color: var(--text-secondary);
+}
+.confirm-modal .confirm-content .confirm-actions {
+  width: 100%;
+  display: flex;
+  gap: var(--spacing-5);
+  margin-top: var(--spacing-3);
+}
+.confirm-modal .confirm-content .confirm-actions .confirm-cancel {
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+.confirm-modal .confirm-content .confirm-actions .confirm-cancel:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.confirm-modal .confirm-content .confirm-actions .confirm-confirm {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+.confirm-modal .confirm-content .confirm-actions .confirm-confirm:hover {
+  background-color: var(--color-success-hover);
+  border-color: var(--color-success-hover);
+}
+.confirm-modal .confirm-content .confirm-actions .confirm-confirm:active {
+  background-color: var(--color-success-active);
+  border-color: var(--color-success-active);
+}
+
+@media (max-width: 768px) {
+  .confirm-content {
+    gap: 12px;
+  }
+  .confirm-content .confirm-icon svg {
+    width: 64px;
+    height: 64px;
+  }
+  .confirm-content .confirm-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .confirm-content .confirm-icon svg {
+    width: 56px;
+    height: 56px;
+  }
+}/*# sourceMappingURL=confirm.css.map */

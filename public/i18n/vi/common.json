@@ -4,6 +4,9 @@
   "export": "Xuất",
 
   "modal": {
+    "cancel": "Hủy",
+    "submit": "Xác nhận",
+
     "confirm": {
       "confirm": "Xác nhận",
       "are-you-sure": "Bạn có chắc chắn muốn thực hiện hành động này?",

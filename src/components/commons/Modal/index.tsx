@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { Modal } from 'antd';
 import type { ModalProps as AntModalProps, ButtonProps } from 'antd';
+
 import './modal.scss';
 
 export interface CommonModalProps
@@ -18,7 +20,7 @@ export interface CommonModalProps
   closable?: boolean;
   maskClosable?: boolean;
   confirmLoading?: boolean;
-  destroyOnClose?: boolean;
+  destroyOnHidden?: boolean;
   className?: string;
   bodyStyle?: React.CSSProperties;
   maskStyle?: React.CSSProperties;
@@ -47,7 +49,7 @@ const ModalCommon: React.FC<CommonModalProps> = ({
   closable = true,
   maskClosable = true,
   confirmLoading = false,
-  destroyOnClose = false,
+  destroyOnHidden = false,
   className = '',
   bodyStyle,
   maskStyle,
@@ -94,10 +96,12 @@ const ModalCommon: React.FC<CommonModalProps> = ({
       closable={closable}
       maskClosable={maskClosable}
       confirmLoading={confirmLoading}
-      destroyOnClose={destroyOnClose}
+      destroyOnHidden={destroyOnHidden}
       className={classes}
-      bodyStyle={bodyStyle}
-      maskStyle={maskStyle}
+      styles={{
+        body: bodyStyle,
+        mask: maskStyle,
+      }}
       wrapClassName={wrapClasses}
       zIndex={zIndex}
       keyboard={keyboard}
